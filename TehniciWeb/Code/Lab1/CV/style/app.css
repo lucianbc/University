@@ -1,0 +1,58 @@
+#hero-image-wrapper {
+    width: 100%;
+    padding-bottom: 115%;
+    position: relative;
+}
+
+#hero-image-wrapper .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*border-radius: 100%;*/
+    background-image: url('../assets/portrait.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+header {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  letter-spacing: 6px;
+  color: white;
+  background-image: url('../assets/headerImg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+header .content {
+  margin: 20px;
+}
+
+#resume-container {
+  display: flex;
+}
+
+aside {
+  background-color: #424245;
+}
+
+aside .text {
+  padding: 0 15px;
+  color: #c7c7c7;
+}
+
+aside .heading {
+  color: #368c94;
+}
+
+main {
+  padding: 0 15px;
+  background-color: #d6d4cd
+}
