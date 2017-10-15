@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  padding: 20px;
+  border-bottom: 1px solid #e2e2e2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 25;
+}
+
+video {
+  display: block;
+  margin: auto;
+}
+
+main {
+  padding-top: 20px;
+  margin-top: 70px;
+}
+
+.heading {
+  font-family: 'Cardo', serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+section {
+  font-family: 'Cardo', serif;
+  font-size: 20px;
+}
+
+.content > section {
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
