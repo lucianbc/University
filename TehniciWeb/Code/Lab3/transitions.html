@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transitions</title>
+    <style>
+    .sad-face .face-background {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      border-radius: 100%;
+    }
+
+    .sad-face * {
+      transition: 1s;
+    }
+
+    .sad-face .eye-container {
+      display: flex;
+      position: relative;
+      top: 35%;
+      width: 50%;
+      margin: auto;
+      justify-content: space-between;
+    }
+
+    .sad-face .eyebrow {
+      width: 30px;
+      height: 5px;
+      background-color: black;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .sad-face .pupil {
+      width: 15px;
+      height: 15px;
+      background-color: black;
+      box-sizing: border-box;
+      border: 2px solid black;
+      border-radius: 100%;
+      margin: auto;
+    }
+
+    .sad-face .face-background:hover .pupil {
+      background-color: red;
+    }
+
+    .sad-face .face-background:hover .eye:first-child .eyebrow{
+      transform: rotate(30deg);
+    }
+
+    .sad-face .face-background:hover .eye:last-child .eyebrow{
+      transform: rotate(-30deg);
+    }
+
+    .sad-face p {
+      text-align: center;
+      position: relative;
+      top: 170px;
+      opacity: 0;
+    }
+
+    .sad-face .face-background:hover p {
+      opacity: 1;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="sad-face">
+      <div class="face-background">
+        <div class="eye-container">
+          <div class="eye">
+            <div class="eyebrow">
+            </div>
+            <div class="pupil">
+            </div>
+          </div>
+          <div class="eye">
+            <div class="eyebrow">
+            </div>
+            <div class="pupil">
+            </div>
+          </div>
+        </div>
+        <p>sfdgfdhs</p>
+      </div>
+    </div>
+  </body>
+</html>

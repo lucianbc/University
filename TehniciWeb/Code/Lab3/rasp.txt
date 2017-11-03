@@ -1,0 +1,1 @@
+1. 50px. border-box include content, padding si border, dar nu margine

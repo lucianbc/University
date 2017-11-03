@@ -1,0 +1,14 @@
+td, th {
+  float: left;
+  margin-right: 5px;
+}
+
+td:first-child {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+td:not(:last-child)::after {
+  content: ","
+}

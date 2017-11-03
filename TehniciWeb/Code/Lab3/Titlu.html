@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- saved from url=(0103)http://www.irinaciocan.ro/tehnici_web_2017_s1/fisiere_teste/test_css_introductiv_ex3_tabel_fluturi.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Titlu</title>
+<style media="screen">
+
+	th {
+		background-color: blue;
+		color: white;
+		font-family: Arial Black, Gadget, sans-serif;
+	}
+	th, td {
+		border: 1px solid black;
+	}
+
+	td:first-of-type, th:first-of-type {
+		text-decoration: underline;
+	}
+
+	/*tr td:first-child, th:first-child {
+		text-decoration: underline;
+	}*/
+	img {
+		max-width: 50px;
+		max-height: 50px;
+	}
+
+	img:hover {
+		outline-width: 2px;
+		outline-color: pink;
+		outline-style: dotted;
+		cursor: crosshair;
+	}
+
+	table {
+		/*border-top: 2px solid #f29;
+		border-left: 2px solid #f29;
+		border-right: 2px solid #92f;
+		border-bottom: 2px solid #92f;*/
+		border: 4px solid blue;
+		border-style: outset;
+		/*border-collapse: collapse;*/
+		border-spacing: 0;
+	}
+
+	table tfoot:last-child {
+		background-color: lime;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+		font-style: italic;
+	}
+
+	caption {
+		caption-side: bottom;
+		margin-top: 5px;
+		text-decoration: line-through overline;
+	}
+
+	ol {
+		list-style-type: armenian;
+		color: red;
+		font-style: italic;
+	}
+
+	li::before {
+		color: red;
+	}
+
+	li {
+		font-style: normal;
+		color: red;
+	}
+
+	li p {
+		color: blue;
+	}
+
+	tbody td:nth-child(2n)::first-letter {
+		background-color: lightblue;
+	}
+
+	tbody td:nth-child(2n + 1)::first-letter {
+		background-color: pink;
+	}
+
+	#gogu:hover {
+		font-size: 50px;
+	}
+
+	#gogu:active {
+		background-color: yellow;
+	}
+
+</style>
+
+</head>
+<body>
+	<table id="tab_fl">
+		<caption>Fluturi!</caption>
+		<thead>
+			<tr>
+				<th>Nume</th>
+				<th>Prenume</th>
+				<th>Ocupatie</th>
+				<th>Hobby-uri</th>
+				<th>Poza</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Flutureanu</td>
+				<td>Petala</td>
+				<td>instructor de zbor</td>
+				<td>
+					<ol>
+						<li><p>acrobatiile in aer</p></li>
+					</ol>
+				</td>
+				<td><img src="./Titlu_files/fluture1a.png" alt="Flutureanu"></td>
+			</tr>
+			<tr>
+				<td>Fluflututurescu</td>
+				<td>Flu-flu</td>
+				<td>lo-logoped</td>
+				<td>
+					<ol>
+						<li><p>zbu-zbu-zburatul pe-pe c-c-campie</p></li>
+					</ol>
+				</td>
+				<td><img src="./Titlu_files/fluture2a.png" alt="Fluflututurescu"></td>
+			</tr>
+			<tr>
+				<td>Fluturache</td>
+				<td>Ion</td>
+				<td>negustor de polen</td>
+				<td>
+					<ol>
+						<li><p>botanica</p></li>
+						<li><p>pictura</p></li>
+					</ol>
+				</td>
+				<td><img src="./Titlu_files/fluture3a.png" alt="Fluturache"></td>
+			</tr>
+			<tr>
+				<td>Omiduta</td>
+				<td>Omidon</td>
+				<td>mancator de frunze</td>
+				<td>
+					<ol>
+						<li><p>actoria</p></li>
+						<li><p>deghizatul in fluture</p></li>
+					</ol>
+				</td>
+				<td><img src="./Titlu_files/fluture4a.png" alt="Omiduta"></td>
+			</tr>
+			<tr>
+				<td>Fluturong</td>
+				<td>Zbarr</td>
+				<td>luptator profesionist</td>
+				<td>
+					<ol>
+						<li><p>artele martiale</p></li>
+						<li><p>batut paianjenii</p></li>
+					</ol>
+				</td>
+				<td><img src="./Titlu_files/fluture5a.png" alt="Omiduta"></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+					Concluzii:
+				</td>
+				<td colspan="4">
+					Toti fluturii sunt frumosi!
+				</td>
+			</tr>
+		</tfoot>
+
+	</table>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+	<hr>
+	<div>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+		<p>paragraf</p>
+	</div>
+
+	<a id="gogu" target="_blank" href="https://www.google.ro/">Go to Gogu</a>
+
+</body></html>
