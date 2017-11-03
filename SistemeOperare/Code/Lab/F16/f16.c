@@ -24,7 +24,9 @@ int handleOptions(char* opts) {
     exit(0);
   }
 
-  for (int i = 1; i < strlen(opts); i++) {
+  int i;
+
+  for (i = 1; i < strlen(opts); i++) {
     switch (opts[i]) {
       case 'l':
         code = code | justLines;
@@ -87,16 +89,22 @@ FILE* processArguments(int argc, char *argv[], int *options) {
 
 Counts count(FILE* file) {
   char ch;
-  Counts fileCount = { 0, 0, 0};
+  Counts fileCount = { 0, 0, 0 };
+  char isContinuousSpace = 1;
   while ((ch = getc(file)) != EOF) {
     ++fileCount.chars;
-    if (isspace(ch)) ++fileCount.words;
+    if (!isspace(ch)) isContinuousSpace = 0;
+    if (isspace(ch)) {
+      if (!isContinuousSpace) ++fileCount.words;
+      isContinuousSpace = 1;
+    }
     if (ch == '\n') ++fileCount.lines;
   }
   return fileCount;
 }
 
-void output(const Counts * counts, const int options) {
+void output(const Counts * counts, int options) {
+  if (options == 0) options = 7;
   if (options & justLines) printf("l: %d ", counts->lines);
   if (options & justWords) printf("w: %d ", counts->words);
   if (options & justChars) printf("c: %d ", counts->chars);
