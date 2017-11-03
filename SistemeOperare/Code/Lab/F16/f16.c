@@ -100,6 +100,9 @@ Counts count(FILE* file) {
     }
     if (ch == '\n') ++fileCount.lines;
   }
+
+  if (!fileCount.lines && (fileCount.words | fileCount.chars)) fileCount.lines += 1;
+
   return fileCount;
 }
 
