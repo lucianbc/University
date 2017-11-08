@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .content {
+        width: 100%;
+        margin: auto;
+        padding-top: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #container {
+        display: inline-flex;
+        background-color: pink;
+      }
+      .rectangle {
+        box-sizing: border-box;
+        padding: 10px;
+        border: 2px solid black;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="content">
+      <div  style="margin-bottom: 50px;">
+          <input type="number" id="rectanglesNr" style="display: block;" min="0" step="1"/>
+          <button onclick="clickHandler()">Generate!</button>
+      </div>
+      <div class="last" id="container">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      var clickHandler = function() {
+
+        var inputData = document.getElementById("rectanglesNr").value;
+
+        if (inputData == "") inputData = "0";
+
+        nr = parseInt(inputData);
+
+        var container = document.getElementById("container");
+        container.innerHTML = "";
+        container.classList.add("last");
+
+        // console.log(nr);
+
+        generateRectangles(nr);
+
+        return nr;
+      }
+
+      var generateRectangles = function(n) {
+        if (n == 0) return;
+        addRectangle();
+        generateRectangles(n - 1);
+      }
+
+      var addRectangle = function() {
+        var innerRectangle = '<div class="rectangle last"></div>'
+        var last = document.getElementsByClassName("last")[0];
+        last.innerHTML = innerRectangle;
+        last.classList.toggle("last");
+      }
+    </script>
+  </body>
+</html>

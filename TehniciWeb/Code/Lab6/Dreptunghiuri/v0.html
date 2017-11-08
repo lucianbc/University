@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .container {
+        width: 600px;
+        height: 400px;
+        background-color: pink;
+      }
+      .rectangle {
+        box-sizing: border-box;
+        padding: 10px;
+        border: 2px solid black;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container last">
+    </div>
+
+    <script type="text/javascript">
+      var generateRectangles = function(n) {
+        if (n == 0) return;
+        addRectangle();
+        generateRectangles(n - 1);
+      }
+
+      var addRectangle = function() {
+        var innerRectangle = '<div class="rectangle last"></div>'
+        var last = document.getElementsByClassName("last")[0];
+        last.innerHTML = innerRectangle;
+        last.classList.toggle("last");
+      }
+    </script>
+  </body>
+</html>
