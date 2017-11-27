@@ -1,0 +1,3 @@
+Known Bugs:
+Pentru ocupatie si nume nu este acceptat decat un singur cuvant
+

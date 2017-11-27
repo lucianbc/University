@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//typedef union
+//{
+//    int balcon;
+//    char decomandat;
+//    char casa[21];
+//} suplimentare;
+
+typedef struct
+{
+    char adresa[101];
+    char tipLocuinta[31];
+    int suprafata;
+    int numarCamere;
+    union
+    {
+        int balcon;
+        char decomandat;
+        char casa[21];
+    } sup;
+
+} locuinta;
+
+int main()
+{
+    printf("Hello world!\n");
+    return 0;
+}

@@ -1,0 +1,7 @@
+Input data format
+States (Q)
+Alphabet (E)
+Final States (F)
+Initial state
+Transitions:
+initial_state command final_state

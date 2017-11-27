@@ -1,0 +1,23 @@
+Atentie la prioritati:
+
+x + y >> 3  <=> (x + y) >> 3
+
+y & z == 1 -> y & (z == 1)
+
+y && z == 1 -> y && (z == 1)
+
+
+
+Functii pentru scriere si citire (stdio.h)
+
+1. Pnetru scriere
+printf("mesaje si specificatori de format", expresie)
+specificatori de format: %...
+
+printf("Hello world!");
+printf("x=%d", x); // %d <- valoare de tip intreg
+
+printf("%d + %d = %d, a, b, a + b)
+
+%7.2f -> 7 spatii din care doua sunt pentru zecimale; 1234.56
+%.2f -> oricate spatii si doua zecimale
