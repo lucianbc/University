@@ -1,0 +1,224 @@
+/*
+  Stiluri de baza si dimensiunea de ecran mica
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+body * {
+  font-size: 1rem;
+}
+
+body {
+  background-image: url("http://irinaciocan.ro/imagini/background_nori.png");
+  background-repeat: repeat;
+  background-color: #d6f0ff;
+}
+
+header {
+  background-color: rgba(214, 240, 255, 0.3);
+}
+
+header h1, main>h2 {
+  margin: 0;
+}
+
+main {
+  display: block;
+  margin: auto;
+  width: 98vw;
+  background-color: #d6f0ff;
+}
+
+header ul {
+  list-style-type: none;
+  background-color: rgb(94, 116, 153);
+  padding: 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header li {
+  transition: all 0.2s;
+}
+
+header li:hover {
+  background-color: rgb(160, 192, 224);
+}
+
+.list_nori {
+  list-style-image: url("http://irinaciocan.ro/imagini/nor_bullet.png");
+}
+
+#meniu_norisori {
+  display: flex;
+  border-top: 1px solid #9cc3db;
+  border-bottom: 1px solid #9cc3db;
+  margin-bottom: 0;
+}
+
+#meniu_norisori > li {
+  margin-left: 10%;
+  position: relative;
+}
+
+#meniu_norisori > li ul li {
+  border-top: 1px solid #9cc3db;
+}
+
+#meniu_norisori >li ul {
+  /*display: none;*/
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s;
+  border-bottom-right-radius: 15%;
+  border-bottom-left-radius: 15%;
+  transition: visibility 0s, opacity 0.2s;
+}
+
+#meniu_norisori > li:hover ul {
+  /*display: inline-block;*/
+  visibility: visible;
+  opacity: 1;
+}
+
+div.produse {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.produse figure {
+  position: relative;
+  border-radius: 15%;
+  background-color: #ffffff;
+}
+
+div.produse img {
+  width: 100%;
+}
+
+@keyframes anim-nor {
+    from {background-color: skyblue;}
+    to {background-color: darkblue;}
+}
+
+div.produse .cer:hover {
+  animation-play-state: running;
+}
+
+div.produse .cer {
+  background-color: skyblue;
+  border-top-right-radius: 15%;
+  border-top-left-radius: 15%;
+  animation-name: anim-nor;
+  animation-play-state: paused;
+  animation-duration: 4s;
+}
+
+div.produse figcaption h2 {
+  position: absolute;
+  top: -5%;
+  left: -2em;
+  width: 8rem;
+  text-align: center;
+  background-color: rgb(125, 125, 125);
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  transform: rotate(-30deg);
+}
+
+div.produse figcaption p {
+  margin: 5%;
+}
+
+#sigla_sus p {
+  display: none;
+}
+
+#sigla_sus {
+  padding-left: 2rem;
+}
+
+#soare {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  border-bottom-right-radius: 100%;
+  box-shadow: 0.2em 0em 1em yellow;
+}
+
+#sectiune_tabel table {
+  display: none;
+}
+
+#sectiune_tabel h1 {
+  text-align: center;
+}
+
+footer {
+  background-color: rgb(152, 152, 152);
+}
+
+footer small {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(79, 79, 79);
+}
+
+
+/*
+  Stiluri pentru ecran mediu
+*/
+@media (min-width: 480px) {
+  main {
+    width: 80vw;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  div.produse figure {
+    flex: 1;
+  }
+
+  #sectiune_tabel table {
+    margin: auto;
+    display: table;
+    text-align: center;
+  }
+
+  table, th, td {
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+  }
+}
+
+
+/*
+  Stiluri pentru ecran mare
+*/
+@media (min-width: 800px) {
+  main {
+    width: 70vw;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  #sigla_sus p {
+    display: inline-block;
+  }
+}

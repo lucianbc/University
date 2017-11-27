@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Exemplu creare dinamica de imagini</title>
+	<script src="exemplu_creare_dinamica_imagine.js">
+	</script>
+
+</head>
+<body>
+	<p>La click pe butonul "creeaza imagine" se va crea dinamic o imagine si va fi adaugata in body.</p>
+	<!-- prin this transmit ca parametru elementul curent -->
+	<p>
+    <button onclick="goLeft(this)">&lt</button>
+		<button onclick="creeazaImagineInainte(this)">creeaza imagine inainte de buton</button>
+    <button onclick="creeazaImagineDupa(this)">creeaza imagine dupa buton</button>
+		<button onclick="stergePrimaImagine()">sterge prima imagine</button>
+    <button onclick="goRight(this)">&gt</button>
+  </p>
+  <button onclick="rearanjeaza()">Rearanjeaza!</button>
+
+	</body>
+</html>

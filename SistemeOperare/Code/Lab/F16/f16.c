@@ -1,3 +1,4 @@
+// Simulate the Unix program wc
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

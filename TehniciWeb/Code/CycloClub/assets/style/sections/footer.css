@@ -1,0 +1,69 @@
+.anim-btn:hover .contur {
+  stroke-dashoffset: 0 !important;
+}
+
+.contur {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 1s;
+}
+
+.icon-div {
+  height: 100%;
+  width: 100%;
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  transition: all 1s;
+}
+
+#facebook-icon {
+  background-image: url("../..//media/images/icons/fb-gray.png");
+}
+
+#insta-icon {
+  background-image: url("../..//media/images/icons/insta-gray.png");
+}
+
+#facebook-icon-white {
+  background-image: url("../..//media/images/icons/fb-white.png");
+  opacity: 0;
+}
+
+#insta-icon-white {
+  background-image: url("../..//media/images/icons/insta-white.png");
+  opacity: 0;
+}
+
+#insta-icon-white:hover {
+  opacity: 1;
+}
+
+#facebook-icon-white:hover {
+  opacity: 1;
+}
+
+.media-btn {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+}
+
+.media-btn svg {
+  height: 100%;
+}
+
+footer {
+  color: #ffffff;
+  background-color: #2e2e2e;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: inherit;
+  font-weight: bold;
+}

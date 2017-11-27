@@ -1,6 +1,0 @@
-data <- c(124, 103, 125, 128, 126, 131, 111, 113, 116, 119, 119, 130, 128, 126, 130, 128, 120, 98, 125, 131, 112, 114, 117, 118, 124, 119, 104, 130)
-length(data)
-days = rep(c("L", "Ma", "Mi", "J", "V", "S", "D"), length(data)/7)
-weeks = rep(c("s1", "s2", "s3", "s4"), each=7, times=1)
-idx = which(data == max(data))
-paste(days[idx], weeks[2])

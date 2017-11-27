@@ -1,0 +1,118 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+body * {
+  font-family: 'Playfair Display', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+figure {
+  margin: 0;
+  display: inline-block;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+figure figcaption {
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-small {
+  flex: 1;
+}
+
+.col-3-times-small {
+  flex: 3;
+}
+
+.col {
+  flex: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .col {
+    flex: 1 0 100%;
+  }
+}
+
+.col-3-times-big {
+  flex: 3;
+}
+
+@media screen and (max-width: 800px) {
+  .col-3-times-big {
+    flex: 1 0 100%;
+  }
+}
+
+.col-big {
+  flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .col-big {
+    flex: 1 0 100%;
+  }
+}
+
+.col-twice {
+  flex: 2;
+}
+
+@media screen and (max-width: 480px) {
+  .col-twice {
+    flex: 1 0 100%;
+  }
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  font-size: 1.7rem;
+  background-attachment: fixed;
+}
+
+.darker {
+  position: relative;
+}
+
+.darker * {
+  z-index: 2;
+}
+
+.darker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0.2;
+}
