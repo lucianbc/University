@@ -5,17 +5,17 @@
 #ifndef LIFECYCLEMANAGER_LIFECYCLEMANAGER_H
 #define LIFECYCLEMANAGER_LIFECYCLEMANAGER_H
 
-#include "Heap.h"
+#include "heap.h"
 
-class LifecycleManager;
+class lifecycle_manager;
 
-typedef void (*action)(LifecycleManager&, key_type);
+typedef void (*action)(lifecycle_manager&, key_type);
 
-class LifecycleManager {
-    Heap<action, 20> queue;
+class lifecycle_manager {
+    heap<action, 20> queue;
 
 public:
-    LifecycleManager();
+    lifecycle_manager();
 
     void register_function(action func, key_type exec_time);
 

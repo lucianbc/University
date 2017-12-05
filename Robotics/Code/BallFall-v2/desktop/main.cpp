@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "../BallFall.h"
+#include "../ball_fall.h"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int get_random(int min, int max) {
     return r;
 }
 
-void print(const Ball_Fall &game) {
+void print(const ball_fall &game) {
     char screen[DISPLAY_HEIGHT][DISPLAY_WIDTH];
     game.print_matrix(screen);
     for (int i = 0; i < DISPLAY_HEIGHT; i++) {
@@ -25,7 +25,7 @@ void print(const Ball_Fall &game) {
 int main() {
     srand(time(NULL));
 
-    Ball_Fall game;
+    ball_fall game;
 
     game.reset();
 

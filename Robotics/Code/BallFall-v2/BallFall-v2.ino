@@ -1,7 +1,7 @@
 #include "LedControl.h"
-#include "BallFall.h"
+#include "ball_fall.h"
 #include "EventManager.h"
-#include "LifecycleManager.h"
+#include "lifecycle_manager.h"
 
 #define REFRESH_RATE 100
 #define DROP_RATE 200
@@ -9,18 +9,18 @@
 #define MOVE_RATE 50
 
 EventManager eventManager;
-LifecycleManager manager;
+lifecycle_manager manager;
 LedControl lc = LedControl(12, 11, 10, 1);
-Ball_Fall game;
+ball_fall game;
 
 const int sw_pin = 2;
 const int x_pin = 1;
 const int y_pin = 0;
 
-void show(LifecycleManager& mgr, long int time);
-void drop(LifecycleManager& mgr, long int time);
-void up(LifecycleManager& mgr, long int time);
-void move_ball(LifecycleManager& mgr, long int time);
+void show(lifecycle_manager& mgr, long int time);
+void drop(lifecycle_manager& mgr, long int time);
+void up(lifecycle_manager& mgr, long int time);
+void move_ball(lifecycle_manager& mgr, long int time);
 void set_game();
 
 enum game_state {
@@ -79,24 +79,24 @@ void print_matrix() {
     }
 }
 
-void show(LifecycleManager& mgr, long int time) {
+void show(lifecycle_manager& mgr, long int time) {
     print_matrix();
     mgr.register_function(show, time + REFRESH_RATE);
 }
 
-void drop(LifecycleManager& mgr, long int time) {
+void drop(lifecycle_manager& mgr, long int time) {
     game.drop_ball();
     mgr.register_function(drop, time + DROP_RATE);
 }
 
-void up(LifecycleManager& mgr, long int time) {
+void up(lifecycle_manager& mgr, long int time) {
     int keep_playing = game.pads_up();
 //    Serial.println(keep_playing);
     if (!keep_playing) eventManager.queueEvent(EventManager::kEventUser0, 2);
     mgr.register_function(up, time + UP_RATE);
 }
 
-void move_ball(LifecycleManager& mgr, long int time) {
+void move_ball(lifecycle_manager& mgr, long int time) {
     char direction = (char) map_joystick_value(1023 - analogRead(x_pin));
     game.move_ball(direction);
     mgr.register_function(move_ball, time + MOVE_RATE);

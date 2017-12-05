@@ -22,15 +22,15 @@ int get_random(int min, int max);
 
 typedef unsigned long int height_type;
 
-class Ball_Fall {
-    struct Pad {
+class ball_fall {
+    struct pad {
         char x;
         height_type y;
         char length;
 
-        Pad() : x(0), y(0), length(0) {}
+        pad() : x(0), y(0), length(0) {}
 
-        Pad(char x, height_type y, char length) : x(x), y(y), length(length) {}
+        pad(char x, height_type y, char length) : x(x), y(y), length(length) {}
 
         char left() {
             return x;
@@ -41,37 +41,37 @@ class Ball_Fall {
         }
     };
 
-    struct Ball {
+    struct ball {
         char x;
         height_type y;
-        Pad* current_pad;
-        Ball(char x, height_type y) : x(x), y(y), current_pad(nullptr) {}
-    } ball;
+        pad* current_pad;
+        ball(char x, height_type y) : x(x), y(y), current_pad(nullptr) {}
+    } player_ball;
 
-    struct View_Point {
+    struct view_point {
         char x;
         height_type y;
         char width;
         char height;
-        View_Point(char x, height_type y) : x(x), y(y), width(DISPLAY_WIDTH), height(DISPLAY_HEIGHT) {}
+        view_point(char x, height_type y) : x(x), y(y), width(DISPLAY_WIDTH), height(DISPLAY_HEIGHT) {}
 
-        void print_matrix(char (*screen)[8], const Ball &ball, const Pad* pads) const;
+        void print_matrix(char (*screen)[8], const ball &ball, const pad* pads) const;
 
-        void print(char screen[DISPLAY_HEIGHT], const Ball &ball, Pad pads[]);
-    } view_point;
+        void print(char screen[DISPLAY_HEIGHT], const ball &ball, pad pads[]);
+    } current_view_point;
 
-    Pad pads[PADS_NUM];
+    pad pads[PADS_NUM];
 
     height_type last_pad_height;
 
     void attach_ball();
 
-    Pad generate_pad(height_type &lph);
+    pad generate_pad(height_type &lph);
 
     void init_pads();
 
 public:
-    Ball_Fall();
+    ball_fall();
 
     void move_ball(char direction);
 
