@@ -70,16 +70,22 @@ void ball_fall::move_ball(char direction) {
 }
 
 height_type ball_fall::drop_ball() {
+    this -> score += 1;
     if (player_ball.current_pad == nullptr) {
         player_ball.y += 1;
         attach_ball();
         if (player_ball.y - current_view_point.y == DISPLAY_HEIGHT - 1) current_view_point.y += 1;
     }
+    return score;
 }
 
 bool ball_fall::pads_up() {
     if (player_ball.current_pad != nullptr && player_ball.current_pad->y <= current_view_point.y + 1) {
-        return false;
+        lifes--;
+        if (lifes <= 0) return false;
+        player_ball.y += 4;
+        attach_ball();
+        return true;
     }
 
     for (char i = 0; i < PADS_NUM; i++) {
@@ -124,6 +130,17 @@ void ball_fall::reset() {
     player_ball.x = BALL_INIT_POS_X;
     player_ball.y = BALL_INIT_POS_Y;
 
+    score = 0;
+    lifes = 1;
+
     init_pads();
     attach_ball();
+}
+
+void ball_fall::add_life() {
+    this->lifes += 1;
+}
+
+int ball_fall::get_lifes() {
+    return this->lifes;
 }

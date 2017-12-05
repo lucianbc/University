@@ -23,6 +23,10 @@ int get_random(int min, int max);
 typedef unsigned long int height_type;
 
 class ball_fall {
+
+    int lifes = 1;
+    height_type score = 0;
+
     struct pad {
         char x;
         height_type y;
@@ -84,6 +88,10 @@ public:
     void reset();
 
     void print_matrix(char (*screen)[8]) const;
+
+    void add_life();
+
+    int get_lifes();
 
     void print(char screen[DISPLAY_HEIGHT]);
 };

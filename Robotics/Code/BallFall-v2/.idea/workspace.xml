@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/BallFall-v2.ino">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="105" column="40" lean-forward="false" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="106" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -42,11 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ball_fall.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ball_fall.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ball_fall.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="147">
+              <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ball_fall.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ball_fall.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -72,16 +82,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ball_fall.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ball_fall.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
-              <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -98,7 +98,6 @@
       <find>move_ba</find>
       <find>set_g</find>
       <find>start_game</find>
-      <find>up</find>
       <find>println</find>
       <find>keep</find>
       <find>lcd.set</find>
@@ -110,7 +109,9 @@
       <find>d</find>
       <find>DROP</find>
       <find>fall</find>
+      <find>reset</find>
       <find>drop</find>
+      <find>up</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -133,9 +134,9 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/desktop/main.cpp" />
         <option value="$PROJECT_DIR$/lifecycle_manager.h" />
-        <option value="$PROJECT_DIR$/ball_fall.cpp" />
-        <option value="$PROJECT_DIR$/BallFall-v2.ino" />
         <option value="$PROJECT_DIR$/ball_fall.h" />
+        <option value="$PROJECT_DIR$/BallFall-v2.ino" />
+        <option value="$PROJECT_DIR$/ball_fall.cpp" />
       </list>
     </option>
   </component>
@@ -226,12 +227,12 @@
       <updated>1512288704506</updated>
       <workItem from="1512288706058" duration="9177000" />
       <workItem from="1512332818491" duration="7076000" />
-      <workItem from="1512505643183" duration="3808000" />
+      <workItem from="1512505643183" duration="5266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20143000" />
+    <option name="totallyTimeSpent" value="21601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1008" extended-state="6" />
@@ -573,18 +574,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lifecycle_manager.h">
+    <entry file="file://$PROJECT_DIR$/heap.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="262">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ball_fall.cpp">
+    <entry file="file://$PROJECT_DIR$/ball_fall.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        <state relative-caret-position="147">
+          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -597,26 +598,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lifecycle_manager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BallFall-v2.ino">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="105" column="40" lean-forward="false" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="106" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heap.h">
+    <entry file="file://$PROJECT_DIR$/ball_fall.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ball_fall.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="269">
+          <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
           <folding />
         </state>
       </provider>

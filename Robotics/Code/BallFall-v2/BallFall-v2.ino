@@ -103,7 +103,10 @@ void show(lifecycle_manager& mgr, long int time) {
 
 void drop(lifecycle_manager& mgr, long int time) {
     int score = game.drop_ball();
-    if (score % 400 == 0 && DROP_RATE > 200) DROP_RATE -= 10;
+    Serial.println(score);
+//    Serial.println(game.get_lifes());
+    if (score != 0 && score % 40 == 0 && DROP_RATE > 200) DROP_RATE -= 10;
+    if (score != 0 && score % 120 == 0) game.add_life();
     mgr.register_function(drop, time + DROP_RATE);
 }
 
