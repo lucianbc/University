@@ -2,16 +2,12 @@
 #include "ball_fall.h"
 #include "EventManager.h"
 #include "lifecycle_manager.h"
+#include <LiquidCrystal.h>
 
 #define REFRESH_RATE 100
-#define DROP_RATE 200
-#define UP_RATE 250
+#define DROP_RATE 300
+#define UP_RATE 300
 #define MOVE_RATE 50
-
-EventManager eventManager;
-lifecycle_manager manager;
-LedControl lc = LedControl(12, 11, 10, 1);
-ball_fall game;
 
 // Joystick pins
 const int sw_pin = 2;
@@ -19,12 +15,19 @@ const int x_pin = 1;
 const int y_pin = 0;
 
 // LCD pins
-const int RS = 13;
+const int RS = 12;
 const int EN = 8;
 const int D4 = 5;
 const int D5 = 4;
 const int D6 = 3;
-const int D7 = 2;
+const int D7 = 7;
+const int V0 = 6;
+
+EventManager eventManager;
+lifecycle_manager manager;
+LedControl lc = LedControl(12, 11, 10, 1);
+ball_fall game;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
 
 void show(lifecycle_manager& mgr, long int time);
 void drop(lifecycle_manager& mgr, long int time);
@@ -43,6 +46,11 @@ void go_to_intro() {
     long int current_time = millis();
     manager.register_function(show, current_time + REFRESH_RATE);
     manager.register_function(move_ball, current_time + MOVE_RATE);
+    lcd.setCursor(0, 0);
+    lcd.clear();
+    lcd.print("Ball Fall");
+    lcd.setCursor(0, 1);
+    lcd.print("click to play");
 }
 
 void go_to_playing() {
@@ -153,6 +161,11 @@ void setup() {
     lc.setIntensity(0, 8);
     lc.shutdown(0, false);
 
+    pinMode(V0, OUTPUT);
+    analogWrite(V0, 120);
+    
+    lcd.begin(16, 2);
+
     eventManager.addListener(EventManager::kEventKeyPress, button_listener);
     eventManager.addListener(EventManager::kEventUser0, over_listener);
 
@@ -162,6 +175,8 @@ void setup() {
 
     pinMode(sw_pin, INPUT);
     digitalWrite(sw_pin, HIGH);
+
+
     Serial.begin(9600);
 }
 

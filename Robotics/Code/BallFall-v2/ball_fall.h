@@ -75,7 +75,7 @@ public:
 
     void move_ball(char direction);
 
-    void drop_ball();
+    height_type drop_ball();
 
     bool pads_up();
 

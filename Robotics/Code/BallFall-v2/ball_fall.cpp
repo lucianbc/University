@@ -69,7 +69,7 @@ void ball_fall::move_ball(char direction) {
     attach_ball();
 }
 
-void ball_fall::drop_ball() {
+height_type ball_fall::drop_ball() {
     if (player_ball.current_pad == nullptr) {
         player_ball.y += 1;
         attach_ball();
