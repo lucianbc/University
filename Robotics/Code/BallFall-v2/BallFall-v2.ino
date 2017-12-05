@@ -13,9 +13,18 @@ lifecycle_manager manager;
 LedControl lc = LedControl(12, 11, 10, 1);
 ball_fall game;
 
+// Joystick pins
 const int sw_pin = 2;
 const int x_pin = 1;
 const int y_pin = 0;
+
+// LCD pins
+const int RS = 13;
+const int EN = 8;
+const int D4 = 5;
+const int D5 = 4;
+const int D6 = 3;
+const int D7 = 2;
 
 void show(lifecycle_manager& mgr, long int time);
 void drop(lifecycle_manager& mgr, long int time);
