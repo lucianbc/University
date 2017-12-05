@@ -5,9 +5,9 @@
 #include <LiquidCrystal.h>
 
 #define REFRESH_RATE 100
-#define DROP_RATE 300
 #define UP_RATE 300
 #define MOVE_RATE 50
+int DROP_RATE = 300;
 
 // Joystick pins
 const int sw_pin = 2;
@@ -102,7 +102,8 @@ void show(lifecycle_manager& mgr, long int time) {
 }
 
 void drop(lifecycle_manager& mgr, long int time) {
-    game.drop_ball();
+    int score = game.drop_ball();
+    if (score % 400 == 0 && DROP_RATE > 200) DROP_RATE -= 10;
     mgr.register_function(drop, time + DROP_RATE);
 }
 

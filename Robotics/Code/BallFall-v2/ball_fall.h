@@ -15,7 +15,7 @@
 #define OFFSET_SCREEN_X 0
 #define OFFSET_SCREEN_Y 0
 
-#define PAD_WIDTH 3
+#define PAD_WIDTH 5
 #define PAD_SPACING 2
 
 int get_random(int min, int max);
