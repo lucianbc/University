@@ -5,10 +5,9 @@
 #include "EventManager.h"
 
 #define REFRESH_RATE 100
-#define UP_RATE 300
 #define MOVE_RATE 50
-
-int DROP_RATE = 300;
+#define DROP_RATE = 300;
+int UP_RATE = 300;
 
 // Joystick pins
 const int sw_pin = 2;
@@ -141,7 +140,7 @@ void drop(lifecycle_manager& mgr, long int time) {
     height_type score = game.drop_ball();
     print_playing_message(score, game.get_lifes());
 
-    if (score % 40 == 0 && DROP_RATE > 210) DROP_RATE -= 10;
+    if (score % 40 == 0 && UP_RATE > 210) UP_RATE -= 10;
     if (score % 120 == 0) game.add_life();
 
     mgr.register_function(drop, time + DROP_RATE);
@@ -215,8 +214,6 @@ void setup() {
 
     pinMode(sw_pin, INPUT);
     digitalWrite(sw_pin, HIGH);
-
-//    Serial.begin(9600);
 }
 
 int btn_times = 0;

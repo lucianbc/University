@@ -15,7 +15,7 @@ void ball_fall::view_point::print_matrix(char (*screen)[8], const ball_fall::bal
     for (char i = 0; i < PADS_NUM; i++) {
         height_type pad_y = pads[i].y - this->y;
         if (pad_y < 0 || pad_y >= DISPLAY_HEIGHT) continue;
-        for (char j = 0; j < pads[i].length && j <DISPLAY_WIDTH; j++) {
+        for (char j = 0; j < pads[i].length && j < DISPLAY_WIDTH; j++) {
             screen[pad_y][j + pads[i].x] = 1;
         }
     }
