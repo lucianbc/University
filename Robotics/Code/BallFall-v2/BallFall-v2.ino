@@ -74,8 +74,7 @@ void print_over_message(height_type score) {
 
 void go_to_intro() {
 //    Serial.println("go to intro");
-//    print_intro_message();
-    print_playing_message(game.get_score(), game.get_lifes());
+    print_intro_message();
     current_state = INTRO;
     manager.clear();
     game.reset();
