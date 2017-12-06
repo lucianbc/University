@@ -94,6 +94,8 @@ public:
     int get_lifes();
 
     void print(char screen[DISPLAY_HEIGHT]);
+
+    height_type get_score() { return score; }
 };
 
 

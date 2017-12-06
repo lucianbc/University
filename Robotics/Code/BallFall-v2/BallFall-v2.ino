@@ -1,13 +1,13 @@
 #include "LedControl.h"
 #include "ball_fall.h"
-#include "EventManager.h"
 #include "lifecycle_manager.h"
 #include <LiquidCrystal.h>
+#include "EventManager.h"
 
 #define REFRESH_RATE 100
-#define UP_RATE 300
+#define DROP_RATE 200
+#define UP_RATE 250
 #define MOVE_RATE 50
-int DROP_RATE = 300;
 
 // Joystick pins
 const int sw_pin = 2;
@@ -15,13 +15,13 @@ const int x_pin = 1;
 const int y_pin = 0;
 
 // LCD pins
-const int RS = 12;
-const int EN = 8;
+const int RS = 13;
+const int EN = 9;
 const int D4 = 5;
 const int D5 = 4;
-const int D6 = 3;
-const int D7 = 7;
-const int V0 = 6;
+const int D6 = 1;
+const int D7 = 0;
+const int V0 = 3;
 
 EventManager eventManager;
 lifecycle_manager manager;
@@ -39,28 +39,64 @@ enum game_state {
     INTRO, PLAYING, OVER
 } current_state;
 
+void print_intro_message() {
+//    Serial.println("print intro");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Ball Fall");
+    lcd.setCursor(0, 1);
+    lcd.print("click to play");
+}
+
+void print_playing_message(height_type score, int lives) {
+//    Serial.println("print play");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Lives: ");
+    lcd.setCursor(7, 0);
+    lcd.print(lives);
+    lcd.setCursor(0, 1);
+    lcd.print("Score: ");
+    lcd.setCursor(7, 1);
+    lcd.print(score);
+}
+
+void print_over_message(height_type score) {
+//    Serial.println("print over");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Score: ");
+    lcd.setCursor(7, 0);
+    lcd.print(score);
+    lcd.setCursor(0, 1);
+    lcd.print("Click to replay");
+}
+
 void go_to_intro() {
+//    Serial.println("go to intro");
+//    print_intro_message();
+    print_playing_message(game.get_score(), game.get_lifes());
     current_state = INTRO;
     manager.clear();
     game.reset();
     long int current_time = millis();
     manager.register_function(show, current_time + REFRESH_RATE);
     manager.register_function(move_ball, current_time + MOVE_RATE);
-    lcd.setCursor(0, 0);
-    lcd.clear();
-    lcd.print("Ball Fall");
-    lcd.setCursor(0, 1);
-    lcd.print("click to play");
 }
 
 void go_to_playing() {
+//    Serial.println("go to play");
+    print_playing_message(game.get_score(), game.get_lifes());
     current_state = PLAYING;
     set_game();
     game.start_game();
 }
 
 void go_to_over() {
+//    Serial.println("go to over");
     current_state = OVER;
+    height_type score = game.get_score();
+    print_over_message(score);
     game.reset();
     manager.clear();
     long int current_time = millis();
@@ -102,11 +138,8 @@ void show(lifecycle_manager& mgr, long int time) {
 }
 
 void drop(lifecycle_manager& mgr, long int time) {
-    int score = game.drop_ball();
-    Serial.println(score);
-//    Serial.println(game.get_lifes());
-    if (score != 0 && score % 40 == 0 && DROP_RATE > 200) DROP_RATE -= 10;
-    if (score != 0 && score % 120 == 0) game.add_life();
+    height_type score = game.drop_ball();
+    print_playing_message(score, game.get_lifes());
     mgr.register_function(drop, time + DROP_RATE);
 }
 
@@ -165,11 +198,10 @@ void setup() {
     lc.setIntensity(0, 8);
     lc.shutdown(0, false);
 
-    pinMode(V0, OUTPUT);
-    analogWrite(V0, 120);
-    
     lcd.begin(16, 2);
-
+    
+    pinMode(V0, OUTPUT);
+    
     eventManager.addListener(EventManager::kEventKeyPress, button_listener);
     eventManager.addListener(EventManager::kEventUser0, over_listener);
 
@@ -180,14 +212,15 @@ void setup() {
     pinMode(sw_pin, INPUT);
     digitalWrite(sw_pin, HIGH);
 
-
-    Serial.begin(9600);
+//    Serial.begin(9600);
 }
 
 int btn_times = 0;
 
 void loop() {
-    // put your main code here, to run repeatedly:
+    // constantly power the display
+    analogWrite(V0, 90);
+    
     eventManager.processEvent();
     manager.execute(millis());
 
