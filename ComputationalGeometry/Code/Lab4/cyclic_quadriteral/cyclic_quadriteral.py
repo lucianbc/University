@@ -24,13 +24,38 @@ def angle(cos):
 
 
 def read():
-    return [Point(-11.64, 1.76), Point(-7, 9), Point(-2.06, 6.38), Point(-2.22, 0.84)]
+    return [Point(-4, 10), Point(-2, 2), Point(6, 6), Point(2.93, 11.8679)]
+
+
+def distance(p1: Point, p2: Point):
+    return math.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
+
+
+def bullet_a(points: list):
+    a2 = angle(cosine(points[0], points[1], points[2]))
+    a4 = angle(cosine(points[2], points[3], points[0]))
+    print(a2 + a4)
+    if a2 + a4 == 180:
+        print("pe cerc")
+    elif a2 + a4 > 180:
+        print("in interiorul cercului")
+    else:
+        print("in exteriorul cercului")
+
+
+def bullet_b(points: list):
+    right = distance(points[0], points[1]) + distance(points[2], points[3])
+    left = distance(points[0], points[3]) + distance(points[1], points[2])
+    if left == right:
+        print("Inscriptibil")
+    else:
+        print("Nu e inscriptibil")
 
 
 def main():
     points = read()
-    print(cosine(points[0], points[1], points[2]))
-    print(angle(cosine(points[0], points[1], points[2])))
+    bullet_a(points)
+    bullet_b(points)
 
 
 if __name__ == '__main__':
