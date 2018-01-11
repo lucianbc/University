@@ -1,1 +1,5 @@
 /home/lucian/Documents/University/OperatingSystems/Code/Lab/A20/greet.sh
+
+
+./executa /home/lucian/Documents/University/OperatingSystems/Code/La
+b/A20/greet -0 input.txt -1 output.txt -2 error.txt
