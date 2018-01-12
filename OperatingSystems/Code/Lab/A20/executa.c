@@ -9,8 +9,6 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-// https://stackoverflow.com/questions/70842/execute-program-from-within-a-c-program
-
 void processArguments(int argc, char* argv[], char buff[255], char redirects[3][PATH_MAX]) {
   if (argc == 1) {
     printf("%s\n", "Specificati calea catre fisier");
