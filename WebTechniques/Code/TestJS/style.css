@@ -1,0 +1,20 @@
+#tabla {
+  width: 700px;
+  height: 700px;
+  background-color: rgb(204, 204, 204);
+  position: relative;
+}
+
+#tabla > .patrat {
+  background-color: rgb(187, 218, 224);
+  border: 2px solid black;
+  box-sizing: border-box;
+  height: 30px;
+  float: left;
+  margin-left: 4px;
+  margin-top: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
