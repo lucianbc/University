@@ -422,3 +422,5 @@ $RECYCLE.BIN/
 # My personal ignored files and folders
 NotCode/
 Play/
+
+.idea/
