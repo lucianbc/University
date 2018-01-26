@@ -1,3 +1,8 @@
+# Fie A1, A2, A3, A4 puncte din RxR, A1, A2, A3, A4 patrulater convex
+# a) Sa se preciezez pozitia punctului A4 fata de cercul circumscris triunghiului A1A2A3
+# b) Sa se precizeze daca patrulaterul A1A2A3A4 este circumscriptibil
+
+
 from collections import namedtuple
 import math
 
@@ -24,7 +29,7 @@ def angle(cos):
 
 
 def read():
-    return [Point(-4, 10), Point(-2, 2), Point(6, 6), Point(2.93, 11.8679)]
+    return [Point(0, 0), Point(4, 0), Point(1, 3), Point(0, 3)]
 
 
 def distance(p1: Point, p2: Point):
@@ -35,7 +40,7 @@ def bullet_a(points: list):
     a2 = angle(cosine(points[0], points[1], points[2]))
     a4 = angle(cosine(points[2], points[3], points[0]))
     print(a2 + a4)
-    if a2 + a4 == 180:
+    if 180.0001 > a2 + a4 > 179.999:
         print("pe cerc")
     elif a2 + a4 > 180:
         print("in interiorul cercului")
@@ -47,9 +52,9 @@ def bullet_b(points: list):
     right = distance(points[0], points[1]) + distance(points[2], points[3])
     left = distance(points[0], points[3]) + distance(points[1], points[2])
     if left == right:
-        print("Inscriptibil")
+        print("Circumscriptibil")
     else:
-        print("Nu e inscriptibil")
+        print("Nu e circumscriptibil")
 
 
 def main():

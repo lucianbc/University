@@ -47,8 +47,8 @@ def test_graham_scan():
 
 
 if __name__ == '__main__':
-    # test_get_sorted_points()
-    test_graham_scan()
+    test_get_sorted_points()
+    # test_graham_scan()
     # test_remove_duplicates()
     # test_points_sort()
     # test_point_equals()
