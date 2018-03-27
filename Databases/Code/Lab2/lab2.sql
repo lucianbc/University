@@ -1,4 +1,11 @@
+-- Lucian Boaca
+-- Grupa 241
 --2
+SELECT last_name, hire_date
+FROM employees
+WHERE hire_date > ( SELECT hire_date
+                    FROM employees
+                    WHERE last_name = 'Fay');
 select initcap(first_name) "Nume", rpad(to_char(hire_date), 20, ' ') as "Data angajarii"
 from employees;
 

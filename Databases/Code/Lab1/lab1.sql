@@ -1,3 +1,5 @@
+-- Lucian Boaca
+-- Grupa 241
 --8
 --lipsesc ghilimelele din alias
 select employee_id, last_name, salary * 12 "salariu anual"
