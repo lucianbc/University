@@ -1,4 +1,5 @@
 matrice([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).
+matrice2([[1, 2, 3, 7, 9], [4, 5, 6, 8, 7], [7, 8, 9, 6, 4]]).
 diag([[1, 0, 1], [0, 1, 0], [1, 0, 1]]).
 categorii([mar/fruct, portocala/fruct, caine/animal, cal/animal, narcisa/floare]).
 
@@ -129,3 +130,32 @@ get_cols(M, C) :-
 
 transpusa(M, T) :-
   bagof(C, get_cols(M, C), T).
+
+% ex 7
+% sublist(List, L, R, SubList)
+sublist_it([H | _], 0, R, H) :- R >= 0.
+sublist_it([_ | T], 0, R, X) :-
+  R >= 0,
+  R1 is R - 1,
+  sublist_it(T, 0, R1, X).
+sublist_it([_ | T], L, R, X) :-
+  L >= 0,
+  R >= 0,
+  L1 is L - 1,
+  R1 is R - 1,
+  sublist_it(T, L1, R1, X).
+
+sublist(List, L, R, SubList) :-
+  findall(X, sublist_it(List, L, R, X), SubList).
+
+interval(L, R, X) :- L =< X, X =< R.
+
+% invocare:
+% matrice2(M), submatrice(M, 1, 2, 2, 3, S).
+submatrice(M, L1, C1, L2, C2, SM) :-
+  findall(S, (
+    itereaza(M, Linie, Indice),
+    interval(L1, L2, Indice),
+    sublist(Linie, C1, C2, S)
+    ), SM
+  ).
