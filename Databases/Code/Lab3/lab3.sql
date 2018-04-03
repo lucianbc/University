@@ -1,3 +1,5 @@
+-- Lucian Boaca
+-- Grupa 241
 --1
 select last_name, e.department_id, department_name
 from employees e, departments d
