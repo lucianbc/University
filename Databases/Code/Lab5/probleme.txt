@@ -1,0 +1,3 @@
+lab5.1, ex10,
+
+lab5.2, ex13, bottom-up si top-down nu sunt invers?

@@ -1,0 +1,33 @@
+--ex 26 lab 5.1
+select employee_id,job_id,department_id
+from employees
+intersect
+select employee_id,job_id,department_id
+from job_history;
+
+select employee_id,job_id,department_id
+from employees
+where employee_id in(select employee_id
+                    from job_history)
+and ((employee_id, job_id) not in (select employee_id, job_id
+                                    from job_history)
+or( employee_id,department_id) not in (select employee_id,department_id
+                                    from job_history))
+minus
+select employee_id,job_id,department_id
+from employees
+where employee_id in(select employee_id
+                    from job_history)
+and (employee_id, job_id,department_id) in (select employee_id, job_id,department_id
+                                            from job_history);
+                                
+                        
+select employee_id, job_id,department_id
+from job_history
+where employee_id in (102,114,101);
+
+--ex 6.d lab 5.2
+select l.location_id,city
+from locations l,departments d
+where l.location_id=d.location_id(+)
+and d.location_id is null;
