@@ -1,0 +1,3 @@
+georgescu: vlad 14
+ionescu: anca 2
+popescu: denisa 6
