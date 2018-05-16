@@ -2,22 +2,38 @@
 % ----------------------------------------
 % Cautare de tip breadth-first
 % ----------------------------------------
-rezolva_b(NodInitial,Solutie):- breadthfirst([[NodInitial]],Solutie).
-breadthfirst([[Nod|Drum]|_],[Nod|Drum]):-scop(Nod).
-breadthfirst([Drum|Drumuri],Solutie):- extinde(Drum,DrumNoi),
-append(Drumuri,DrumNoi,Drumuri1),
-breadthfirst(Drumuri1,Solutie).
+rezolva_b(NodInitial,Solutie) :-
+  breadthfirst([[NodInitial]],Solutie).
+
+breadthfirst([[Nod|Drum]|_],[Nod|Drum]) :-
+  scop(Nod).
+
+breadthfirst([Drum|Drumuri],Solutie) :-
+  extinde(Drum,DrumNoi),
+  append(Drumuri,DrumNoi,Drumuri1),
+  breadthfirst(Drumuri1,Solutie).
+
 extinde([Nod|Drum],DrumNoi):-
-bagof([NodNou,Nod|Drum],(s(Nod,NodNou),
-\+ (member(NodNou,[Nod|Drum]))), DrumNoi),!.
+  bagof([NodNou,Nod|Drum], (
+    s(Nod,NodNou),
+    \+ (member(NodNou,[Nod|Drum]))
+    ), DrumNoi
+  ),!.
+
 extinde(_,[]).
 % ----------------------------------------
 %Cautare de tip depth-first cu mecanism de detectare a ciclurilor
 % ----------------------------------------
-rezolva(Nod,Solutie):-depthfirst([],Nod,Solutie).
-depthfirst(Drum, Nod,[Nod|Drum]):-scop(Nod).
-depthfirst(Drum,Nod,Solution):- s(Nod,Nod1),\+ (member(Nod1,Drum)),
-depthfirst([Nod|Drum],Nod1,Solution).
+rezolva(Nod,Solutie) :-
+  depthfirst([],Nod,Solutie).
+
+depthfirst(Drum, Nod,[Nod|Drum]) :-
+  scop(Nod).
+
+depthfirst(Drum,Nod,Solution) :-
+  s(Nod,Nod1),
+  \+ (member(Nod1,Drum)),
+  depthfirst([Nod|Drum],Nod1,Solution).
 % ----------------------------------------
 %Cautare de tip iterative deepening
 % ----------------------------------------
@@ -30,12 +46,13 @@ scop(NodScop),!.
 % ----------------------------------------
 %Predicatele specifice problemei mutarii blocurilor
 % ----------------------------------------
-s(Lista_stive,Lista_stive_rez):- member(X,Lista_stive),X=[Varf|_],
-det_poz_el(Lista_stive,N,X),
-sterg_la_n(Lista_stive,Lista_stive_inter,N),
-member(Y,Lista_stive),
-det_poz_el(Lista_stive,N1,Y),N1\==N,
-adaug_la_n(Varf,Lista_stive_inter,Lista_stive_rez,N1).
+s(Lista_stive,Lista_stive_rez):-
+  member(X,Lista_stive),X=[Varf|_],
+  det_poz_el(Lista_stive,N,X),
+  sterg_la_n(Lista_stive,Lista_stive_inter,N),
+  member(Y,Lista_stive),
+  det_poz_el(Lista_stive,N1,Y),N1\==N,
+  adaug_la_n(Varf,Lista_stive_inter,Lista_stive_rez,N1).
 % configuratia initiala a stivelor.
 initial([[d],[a,b],[c]]).
 % configuratia-scop a stivelor, cea pe care o cauta fiecare dintre algoritmii de cautare folositi.
