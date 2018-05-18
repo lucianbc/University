@@ -109,7 +109,7 @@ cmake-build-debug/
 
 # IntelliJ
 /out/
-
+*.imp
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
