@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/myDb"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="pao"
+              password="pao1234"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/pao"
+              maxActive="15"
+              maxIdle="3"
+    />
+</Context>
