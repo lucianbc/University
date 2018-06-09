@@ -21,11 +21,23 @@ public class Test7 {
         return frame;
     }
 
+//    public static void main(String[] args) {
+//        Test7 t7 = new Test7();
+//        JFrame frame = t7.createFrame("title");
+//        frame.setSize(400, 300);
+//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        frame.setVisible(true);
+//    }
+
+    public Integer SUMA(Integer rezultat, int a, int b) {
+        rezultat = a + b;
+        return rezultat;
+    }
+
     public static void main(String[] args) {
-        Test7 t7 = new Test7();
-        JFrame frame = t7.createFrame("title");
-        frame.setSize(400, 300);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        Test7 t = new Test7();
+        Integer r = 0;
+        int a = t.SUMA(r, 5, 3);
+        System.out.println(a);
     }
 }

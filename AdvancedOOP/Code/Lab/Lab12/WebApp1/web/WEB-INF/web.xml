@@ -7,8 +7,16 @@
         <servlet-name>NumarAleator</servlet-name>
         <servlet-class>com.lucianbc.pao.NumarAleator</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CititorParam</servlet-name>
+        <servlet-class>com.lucianbc.pao.CititorParam</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NumarAleator</servlet-name>
         <url-pattern>/numarAleator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CititorParam</servlet-name>
+        <url-pattern>/ceva</url-pattern>
     </servlet-mapping>
 </web-app>

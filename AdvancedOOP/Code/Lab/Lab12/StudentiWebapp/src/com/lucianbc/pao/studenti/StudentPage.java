@@ -30,6 +30,7 @@ public class StudentPage extends HttpServlet {
         String nume = request.getParameter("nume");
         Student student = new Student(id, nume, abs);
         studentiDao.insertOrUpdateStudent(student);
+        request.getSession().setAttribute("user", new Student(1, "asd", 23));
         response.sendRedirect(request.getRequestURL() + "?" + request.getQueryString());
     }
 
