@@ -15,6 +15,7 @@
       try {
         Double n = (Double) request.getSession().getAttribute("number");
         out.write(Double.toString(n));
+
       } catch (NullPointerException e) {
           out.write("No num");
       }

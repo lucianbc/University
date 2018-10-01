@@ -47,11 +47,10 @@ where d.department_id = e.department_id(+);
 select e.last_name, d.department_name
 from employees e, departments d
 where e.department_id = d.department_id(+)
-union all
+union
 select e.last_name, d.department_name
 from departments d, employees e
-where e.department_id(+) = d.department_id
-and e.department_id is null;
+where e.department_id(+) = d.department_id;
 
 --9
 select last_name, job_id, department_name, grade_level

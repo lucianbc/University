@@ -1,3 +1,2 @@
-daca pk inseamna uk + nn, de ce pot adauga la exercitiul 7 aceeasi valoare in emp_zr1
 trebuie sa punem noi ghilimele la coloana citita cu accept, exercitiul 10
 cum pot returna intr-o lista? pot concatena un string?

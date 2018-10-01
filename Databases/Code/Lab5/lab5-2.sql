@@ -360,6 +360,11 @@ start   with manager_id is null
 connect by prior employee_id = manager_id;
 
 --24
+select  lpad(' ', 3 * level - 3) || last_name nume, level,
+        employee_id, manager_id, department_id
+from    employees
+start   with manager_id is null
+connect by prior employee_id = manager_id;
 --a
 select  lpad(' ', 3 * level - 3) || last_name nume, level,
         employee_id, manager_id, department_id
@@ -375,6 +380,7 @@ from    employees
 start   with manager_id is null
 connect by prior employee_id = manager_id
 and     upper(last_name) <> upper('de haan');
+
 
 --25
 with

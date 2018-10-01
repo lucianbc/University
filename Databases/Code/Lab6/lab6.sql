@@ -90,7 +90,7 @@ accept  mgr_id number prompt 'Manager Id'
 accept  loc_id number prompt 'Location Id'
 
 insert  into dept_zr1
-values  (&dept_id, &dept_name, &mgr_id, &loc_id);
+values  (&dept_id, '&dept_name', &mgr_id, &loc_id);
 
 --11
 variable v_nume varchar2(20)
